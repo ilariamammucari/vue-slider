@@ -10,6 +10,45 @@
 </head>
 <body>
     
+    <!--* contenitore principale -->
+    <div id="root" class="container">
+        <!-- * contenitore slider -->
+        <div class="slider-wrapper">
+
+
+            <!-- * freccia sx -->
+            <!-- * al click scorro foto a sx -->
+            <div class="prev" @click="fotoPrecedente">
+                <i class="fas fa-angle-left"></i>
+            </div>
+            <!-- * /freccia sx -->
+
+            <!-- * img -->
+            <div class="images">
+                <!-- * popolo le immagini grazie al contatore che scorre l'array -->
+                <img :src="immagini[contatore]" alt="immagine">
+            </div>
+            <!-- * /img -->
+
+            <!-- * freccia dx -->
+            <!-- * al click scorro foto a dx -->
+            <div class="next" @click="prossimaFoto">
+                <i class="fas fa-angle-right"></i>
+            </div>
+            <!-- * /freccia dx -->
+
+            <!-- * pallini -->
+            <div class="nav">
+                <!-- * popolo i pallini con ciclo for e assegno la classe active grazie all'index, al click del pallino appare la foto corrispondente -->
+                <i v-for="( immagine,index ) in immagini" class="fas fa-circle" :class="( index == contatore ) ? 'active' : ''" @click="cambioImg(index)"></i>
+            </div>
+            <!-- * /pallini -->
+
+
+        </div>
+        <!-- * /contenitore slider -->
+    </div>
+    <!-- * /contenitore principale -->
 
     <script src="vue/script.js"></script>
 </body>
