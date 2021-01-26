@@ -13,18 +13,17 @@ var app = new Vue({
         sliderAuto: ''
     },
     created: function() {
-        // sliderAuto = setInterval(this.prossimaFoto, 2000);
+        // this.sliderAuto = setInterval(this.prossimaFoto, 2000);
     },
     methods: {
         // * funzione per scorrere foto in avanti
         prossimaFoto() {
             ( this.contatore == this.immagini.length - 1 ) ? this.contatore = 0 : this.contatore++;
-            clearInterval(this.sliderAuto);
         },
         // * funzione per scorrere foto indietro
         fotoPrecedente() {
             ( this.contatore == 0 ) ? this.contatore = this.immagini.length - 1 : this.contatore--;
-            clearInterval(this.sliderAuto);
+
         },
         // * funzione cambio img cliccando sul pallino
         cambioImg(index) {
