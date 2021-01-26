@@ -12,9 +12,10 @@
     
     <!--* contenitore principale -->
     <div id="root" class="container">
-        <div  @keydown.37="prossimaFoto" class="intercetta-tastiera"></div>
+        
         <!-- * contenitore slider -->
-        <div class="slider-wrapper">
+        <!-- * scorro foto con freccette laterali -->
+        <div class="slider-wrapper" @keydown="tastieraAvanti" @keyup="tastieraIndietro" tabindex=-1 >
 
 
             <!-- * freccia sx -->
@@ -50,7 +51,6 @@
         <!-- * /contenitore slider -->
     </div>
     <!-- * /contenitore principale -->
-
     <script src="vue/script.js"></script>
 </body>
 </html>

@@ -13,7 +13,7 @@ var app = new Vue({
         sliderAuto: ''
     },
     created: function() {
-        // this.sliderAuto = setInterval(this.prossimaFoto, 2000);
+        this.sliderAuto = setInterval(this.prossimaFoto, 2000);
     },
     methods: {
         // * funzione per scorrere foto in avanti
@@ -29,6 +29,17 @@ var app = new Vue({
         cambioImg(index) {
             this.contatore = index;
             clearInterval(this.sliderAuto);
+        },
+        // * scorro foto a dx con freccetta dx
+        tastieraAvanti(e){
+            ( e.key == 'ArrowRight' ) ? this.prossimaFoto() : '';
+            clearInterval(this.sliderAuto);
+        },
+        // * scorro foto a sx con freccetta sx
+        tastieraIndietro(e){
+            ( e.key == 'ArrowLeft' ) ? this.fotoPrecedente() : '';
+            clearInterval(this.sliderAuto);
         }
     }
 });
+
