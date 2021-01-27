@@ -43,3 +43,12 @@ var app = new Vue({
     }
 });
 
+
+// * in questo modo posso cambiare foto con le freccette senza dover cliccare prima sullo schermo perchè con window mi riferisco già al documento e non a una sua parte
+window.addEventListener('keydown', function(e) {
+    app.tastieraAvanti(e)
+});
+
+window.addEventListener('keydown', function(e) {
+    app.tastieraIndietro(e)
+});

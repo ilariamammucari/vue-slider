@@ -14,12 +14,12 @@
     <div id="root" class="container">
         
         <!-- * contenitore slider -->
-        <!-- * scorro foto con freccette laterali -->
-        <div class="slider-wrapper" @keydown="tastieraAvanti" @keyup="tastieraIndietro" tabindex=-1 >
+        <!-- ! scorro foto con freccette laterali -->
+        <div class="slider-wrapper">
 
 
             <!-- * freccia sx -->
-            <!-- * al click scorro foto a sx -->
+            <!-- ! al click scorro foto a sx -->
             <div class="prev" @click="fotoPrecedente">
                 <i class="fas fa-angle-left"></i>
             </div>
@@ -27,13 +27,13 @@
 
             <!-- * img -->
             <div class="images">
-                <!-- * popolo le immagini grazie al contatore che scorre l'array -->
+                <!-- ! popolo le immagini grazie al contatore che scorre l'array -->
                 <img :src="immagini[contatore]" alt="immagine">
             </div>
             <!-- * /img -->
 
             <!-- * freccia dx -->
-            <!-- * al click scorro foto a dx -->
+            <!-- ! al click scorro foto a dx -->
             <div class="next" @click="prossimaFoto">
                 <i class="fas fa-angle-right"></i>
             </div>
@@ -41,7 +41,7 @@
 
             <!-- * pallini -->
             <div class="nav">
-                <!-- * popolo i pallini con ciclo for e assegno la classe active grazie all'index, al click del pallino appare la foto corrispondente -->
+                <!-- ! popolo i pallini con ciclo for e assegno la classe active grazie all'index, al click del pallino appare la foto corrispondente -->
                 <i v-for="( immagine,index ) in immagini" class="fas fa-circle" :class="( index == contatore ) ? 'active' : ''" @click="cambioImg(index)"></i>
             </div>
             <!-- * /pallini -->
