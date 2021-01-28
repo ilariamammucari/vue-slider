@@ -15,7 +15,7 @@ var app = new Vue({
     created: function() {
         this.sliderAuto = setInterval(this.prossimaFoto, 2000);
 
-        // * in questo modo posso cambiare foto con le freccette senza dover cliccare prima sullo schermo perchè con window mi riferisco già al documento e non a una sua parte
+        // * in questo modo posso cambiare foto con le freccette senza dover cliccare prima sullo schermo perchè stando dentro created mi riferisco al documento e non a una sua parte
         self.addEventListener('keydown', function(e) {
             app.tastieraAvanti(e)
         });
